@@ -1,3 +1,9 @@
+MasterChoice.xlsx
+
+.DS_Store
+
+*.db
+
 # Logs
 logs
 *.log

@@ -1,0 +1,7 @@
+extends ./layout.pug
+
+block content
+		.container
+			h1 Error 500
+			p Internal Server Error... #[a(href="/")= "Go to index"]
+			p #{error}

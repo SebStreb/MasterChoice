@@ -1,0 +1,34 @@
+{
+  "name": "masterchoice",
+  "version": "0.1.0",
+  "description": "A small website to help you choose Computer Science your master program at UCL.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebStreb/MasterChoice.git"
+  },
+  "keywords": [
+    "sinf",
+    "ucl",
+    "nodejs",
+    "program",
+    "master"
+  ],
+  "author": "Sébastien Strebelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebStreb/MasterChoice/issues"
+  },
+  "homepage": "https://github.com/SebStreb/MasterChoice#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "fs": "0.0.1-security",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta10",
+    "sqlite3": "^3.1.8"
+  }
+}
