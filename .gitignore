@@ -2,7 +2,7 @@ MasterChoice.xlsx
 
 .DS_Store
 
-*.db
+database/db/*
 
 # Logs
 logs

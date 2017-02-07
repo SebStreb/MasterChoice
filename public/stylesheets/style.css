@@ -13,10 +13,12 @@
 	height: 50px;
 }
 
-.container {
-	padding: 0px 10em 50px;
+body {
+	padding-top: 75px;
 }
 
 footer {
 	text-align : center;
+	background-color: white;
+	color: grey;
 }

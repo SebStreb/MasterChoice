@@ -11,18 +11,16 @@ html
 			script(src="/scripts/bootstrap.min.js")
 		block title
 			title MasterChoice
+
 	body
 		block nav
-
-			nav.navbar.navbar-default
+			nav.navbar.navbar-default.navbar-fixed-top
 				.container-fluid
 					.nav.navbar-nav
 						img.logo(src="/img/epl.png")
 					.navbar-header
 						a.navbar-brand(href="/") MasterChoice - Create your Program
 		block content
-			.container
-				h1 Hello World!
 		block foot
-			footer.navbar-fixed-bottom
+			footer
 				p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle

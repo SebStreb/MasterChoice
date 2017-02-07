@@ -1,8 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const fs = require('fs');
-const install = require('./install.js');
+const mongoose = require('mongoose');
+const course = require('./database/course.js');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/db');
 
 var app = express();
 app.set('views', './public/views');
@@ -13,24 +14,22 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
-	res.render('index');
+	course.all(function (courses) {
+		res.render('index', {courses: courses, selected: []});
+	});
 });
 
 app.use(function(req, res) {
 	res.status(404);
-	res.redirect('/');
+	course.all(function (courses) {
+		res.render('index', {courses: courses, selected: []});
+	});
 });
 
 app.use(function(error, req, res, next) {
-	res.status(500);
-	res.render('500');
+	console.error(error);
+	res.status(500).render('500', {error: error});
 });
 
-console.log("Dumping database");
-fs.unlink("courses.db", function () {
-	console.log("recreating database");
-	install.createDatabase();
-
-	console.log("Server listening on port 3000");
-	app.listen(3000);
-});
+console.log("Server listening on port 3000");
+app.listen(3000);

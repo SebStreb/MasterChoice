@@ -1,7 +1,11 @@
 extends ./layout.pug
 
 block content
-		.container
-			h1 Error 500
-			p Internal Server Error... #[a(href="/")= "Go to index"]
-			p #{error}
+	.container
+		h1 Error 500
+		p Internal Server Error... #[a(href="/")= "Go to index"]
+		p #{error}
+
+block foot
+	footer.navbar-fixed-bottom
+		p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle

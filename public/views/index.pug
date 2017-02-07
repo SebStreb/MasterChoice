@@ -1,5 +1,36 @@
 extends ./layout.pug
 
 block content
-	.container
-		p This is a test
+	.container-fluid
+		table.table.table-striped
+			thead
+				tr
+					th Code
+					th Nom du cours
+					th Professeur
+					th Option
+					th Crédits
+					th Quadri
+					th Commentaire
+					th Action
+			tbody
+				each course in courses
+					tr
+						td #{course.code}
+						td #{course.title}
+						- names = ""
+						each prof in course.professors
+							- names += prof.name + "<br \>"
+						td !{names}
+						- names = ""
+						each opt in course.options
+							if opt.required
+								- names += "<strong>" + opt.name + "</strong><br \>"
+							else
+								- names += opt.name + "<br \>"
+						td !{names}
+						td #{course.credits}
+						td #{course.semester}
+						td #{course.comments}
+						td
+							button.btn.btn-primary.btn-xs Ajouter
