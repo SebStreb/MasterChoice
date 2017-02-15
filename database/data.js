@@ -1,21 +1,21 @@
 const fs = require('fs');
 
-var courses = new Array();
+var courses = [];
 var data = fs.readFileSync("./database/MasterChoice.csv", 'utf8');
 
 data.trim().split('\r').forEach(function (course, index) {
 	if (index == 0) return;
 	var fields = course.split(';');
-	var professors = new Array();
+	var professors = [];
 	fields[2].split(',').forEach(function (professor, index) {
-		professors[index] = {name: professor};
+		professors[index] = {name: professor.trim()};
 	});
-	var options = new Array();
+	var options = [];
 	fields[3].split(',').forEach(function (option, index) {
 		if (option.includes('(O)'))
-			options[index] = {name: option.substring(0, option.length-4), required: true};
+			options[index] = {name: option.substring(0, option.length-4).trim(), required: true};
 		else
-			options[index] = {name: option, required: false};
+			options[index] = {name: option.trim(), required: false};
 	});
 	courses[index-1] = {
 		code : fields[0],

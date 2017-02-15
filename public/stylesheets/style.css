@@ -1,16 +1,23 @@
-.navbar-header {
-	padding: 15px;
-	text-align: center;
-	width: 85%;
-}
-
 .navbar-brand {
-	float:none;
 	font-size: 2em;
 }
 
 .logo {
 	height: 50px;
+}
+
+.form-space {
+	width: 50px;
+}
+
+.form-inline {
+	margin: 0 -3px;
+}
+
+.form-inline .form-group label,
+.form-inline .form-group input,
+.form-inline .form-group select {
+	margin: 0 3px;
 }
 
 body {

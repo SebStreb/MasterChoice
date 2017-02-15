@@ -1,7 +1,33 @@
 extends ./layout.pug
 
+block append head
+	script.
+		function filter(kind) {
+			if (kind === "prof")
+				location.href = '/professor/' + $("#prof").val();
+			else
+				location.href = '/option/' + $("#opt").val();
+		};
+
 block content
 	.container-fluid
+		.form-inline
+			.form-group
+				label(for="opt") Filtrer par option :
+				select.form-control#opt
+					option
+					each name in optNames
+						option #{name}
+				button.btn.btn-primary(onclick="filter('opt');") Filtrer
+			.form-group.form-space
+			.form-group
+				label(for="prof") Filtrer par professeur :
+				select.form-control#prof
+					option
+					each name in profNames
+						option #{name}
+				button.btn.btn-primary(onclick="filter('prof');") Filtrer
+
 		table.table.table-striped
 			thead
 				tr

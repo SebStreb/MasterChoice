@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "install" : "node database/install.js"
+    "install": "node database/install.js"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,10 @@
   "homepage": "https://github.com/SebStreb/MasterChoice#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
+    "child_process": "^1.0.2",
     "express": "^4.14.1",
     "fs": "0.0.1-security",
+    "fs-extra": "^2.0.0",
     "mongoose": "^4.8.1",
     "morgan": "^1.7.0",
     "pug": "^2.0.0-beta10"
