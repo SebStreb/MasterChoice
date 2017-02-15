@@ -3,7 +3,7 @@ const fs = require('fs');
 var courses = [];
 var data = fs.readFileSync("./database/MasterChoice.csv", 'utf8');
 
-data.trim().split('\r').forEach(function (course, index) {
+data.trim().split('\n').forEach(function (course, index) {
 	if (index == 0) return;
 	var fields = course.split(';');
 	var professors = [];
