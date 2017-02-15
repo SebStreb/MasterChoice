@@ -11,7 +11,7 @@
 }
 
 .form-inline {
-	margin: 0 -3px;
+	margin: 0 -3px 25px;
 }
 
 .form-inline .form-group label,
@@ -20,8 +20,16 @@
 	margin: 0 3px;
 }
 
+ul.list-group {
+	margin: 0px;
+}
+
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
+
 body {
-	padding-top: 75px;
+	padding-top: 100px;
 }
 
 footer {

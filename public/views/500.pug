@@ -1,11 +1,25 @@
-extends ./layout.pug
+doctype html
 
-block content
-	.container
-		h1 Error 500
-		p Internal Server Error... #[a(href="/")= "Go to index"]
-		p #{error}
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", type="text/css", href="/stylesheets/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
+		script(src="/scripts/jquery.min.js")
+		script(src="/scripts/bootstrap.min.js")
+		title MasterChoice
 
-block foot
-	footer.navbar-fixed-bottom
-		p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle
+	body
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				.nav.navbar-nav
+					img.logo(src="/img/epl.png")
+				.navbar-header
+					a.navbar-brand(href="/") MasterChoice - Create your Program
+		.container
+			h1 Error 500
+			p Internal Server Error... #[a(href="/")= "Go to index"]
+			p #{error}
+		footer.navbar-fixed-bottom
+			p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle

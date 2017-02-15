@@ -1,62 +1,89 @@
-extends ./layout.pug
+doctype html
 
-block append head
-	script.
-		function filter(kind) {
-			if (kind === "prof")
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", type="text/css", href="/stylesheets/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
+		script(src="/scripts/jquery.min.js")
+		script(src="/scripts/bootstrap.min.js")
+		script.
+			function filterProf() {
 				location.href = '/professor/' + $("#prof").val();
-			else
+			};
+			function filterOpt() {
 				location.href = '/option/' + $("#opt").val();
-		};
+			};
+		title MasterChoice
 
-block content
-	.container-fluid
-		.form-inline
-			.form-group
-				label(for="opt") Filtrer par option :
-				select.form-control#opt
-					option
-					each name in optNames
-						option #{name}
-				button.btn.btn-primary(onclick="filter('opt');") Filtrer
-			.form-group.form-space
-			.form-group
-				label(for="prof") Filtrer par professeur :
-				select.form-control#prof
-					option
-					each name in profNames
-						option #{name}
-				button.btn.btn-primary(onclick="filter('prof');") Filtrer
+	body
 
-		table.table.table-striped
-			thead
-				tr
-					th Code
-					th Nom du cours
-					th Professeur
-					th Option
-					th Crédits
-					th Quadri
-					th Commentaire
-					th Action
-			tbody
-				each course in courses
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				.nav.navbar-nav
+					img.logo(src="/img/epl.png")
+				.navbar-header
+					a.navbar-brand(href="/") MasterChoice - Create your Program
+				.navbar-right
+					p.navbar-text Nombre de crédits choisis : …
+					button.btn.btn-primary.navbar-btn(data-toggle="modal", data-target="#info") Plus d'informations…
+
+		.container-fluid
+			.form-inline.text-center
+				.form-group
+					label(for="opt") Filtrer par option :
+					select.form-control#opt
+						option
+						each name in optNames
+							option #{name}
+					button.btn.btn-primary(onclick="filterOpt();") Filtrer
+				.form-group.form-space
+				.form-group
+					label(for="prof") Filtrer par professeur :
+					select.form-control#prof
+						option
+						each name in profNames
+							option #{name}
+					button.btn.btn-primary(onclick="filterProf();") Filtrer
+
+			table.table.table-striped
+				thead
 					tr
-						td #{course.code}
-						td #{course.title}
-						- names = ""
-						each prof in course.professors
-							- names += prof.name + "<br \>"
-						td !{names}
-						- names = ""
-						each opt in course.options
-							if opt.required
-								- names += "<strong>" + opt.name + "</strong><br \>"
-							else
-								- names += opt.name + "<br \>"
-						td !{names}
-						td #{course.credits}
-						td #{course.semester}
-						td #{course.comments}
-						td
-							button.btn.btn-primary.btn-xs Ajouter
+						th Code
+						th Nom du cours
+						th Professeur
+						th Option
+						th Crédits
+						th Quadri
+						th Commentaire
+						th Action
+				tbody
+					each course in courses
+						tr
+							td
+								strong #{course.code}
+							td
+								em #{course.title}
+							td
+								ul.list-group
+									each prof in course.professors
+										li.list-group-item #{prof.name}
+							td
+								ul.list-group
+									each opt in course.options
+										if opt.required
+											li.list-group-item
+												strong #{opt.name}
+										else
+											li.list-group-item #{opt.name}
+							td.text-center #{course.credits}
+							td.text-center #{course.semester}
+							td
+								small
+									i #{course.comments}
+							td
+								button.btn.btn-primary.btn-xs Ajouter
+
+		footer
+			p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle
