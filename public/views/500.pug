@@ -13,10 +13,10 @@ html
 	body
 		nav.navbar.navbar-default.navbar-fixed-top
 			.container-fluid
-				.nav.navbar-nav
-					img.logo(src="/img/epl.png")
 				.navbar-header
-					a.navbar-brand(href="/") MasterChoice - Create your Program
+					a.navbar-brand(href="/").
+						#[img.logo(src="/img/epl.png")]
+						MasterChoice
 		.container
 			h1 Error 500
 			p Internal Server Error... #[a(href="/")= "Go to index"]

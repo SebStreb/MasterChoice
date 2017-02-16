@@ -1,60 +1,60 @@
-﻿Code de cours;Intitulé du cours;Professeur;Option;Quadri;Crédits;Commentaire
-LALLE2500;Séminaire d'insertion professionnelle: allemand;Caroline Klein,Ann Rinder;Autres;0;3;
-LALLE2501;Séminaire d'insertion professionnelle: allemand;Caroline Klein,Ann Rinder;Autres;0;5;
-LELEC2870;Machine Learning : regression, dimensionality reduction and data visualization;John Lee,Michel Verleysen;Intelligence artificielle, Science des données;1;5;
-LELEC2885;Image processing and computer vision;Christophe De Vleeschouwer,Laurent Jacques;Intelligence artificielle;1;5;
-LESPA2600;Séminaire d'insertion professionnelle - Epagnol (B2.2 /C1);Paula Lorente Fernandez;Autres;1;3;
-LESPA2601;Séminaire d'insertion professionnelle - Epagnol (B2.2 /C1);Paula Lorente Fernandez;Autres;1;5;
-LFSA2202;Ethics and ICT;Axel Gosseries,Maxime Lambrecht;Autres;2;3;
-LFSA2210;Organisation et ressources humaines;John Cultiaux;Tronc commun (O);2;3;
-LFSA2351A;Dynamique des groupes (1er semestre);Piotr Sobieski,Vincent Wertz;Autres;1;3;
-LFSA2351B;Dynamique des groupes (2ème semestre);Piotr Sobieski,Vincent Wertz;Autres;2;3;
-LFSA2995;Stage en entreprise;Jean-Pierre Raskin;Autres;0;10;seulement en MA2
-LFSA2996;Stage en entreprise;Jean-Pierre Raskin;Autres;0;5;seulement en MA2
-LGBIO2010;Bioinformatics;Pierre Dupont,Michel Ghislain;Intelligence artificielle;2;5;
-LINGI2132;Language and translators;Pierre Schaus;Finalité spécialisée (O);2;6;
-LINGI2142;Computer networks: configuration and management;Olivier Bonaventure;Sécurité et réseaux (O);2;5;
-LINGI2143;Concurrent systems : models and analysis;Charles Pecheur;Ingénierie logicielle (O), Sécurité et réseaux;1;5;
-LINGI2144;Secured systems engineering;Gildas Avoine;Sécurité et réseaux;1;5;préalable : LINGI2347
-LINGI2145;Cloud Computing;Damien Leroy;Sécurité et réseaux (O), Ingénierie logicielle, Intelligence artificielle;1;5;
-LINGI2146;Mobile and Embedded Computing;Ramin Sadre;Sécurité et réseaux (O);2;5;
-LINGI2172;Databases;Siegfried Nijssen;Finalité spécialisée (O);2;6;
-LINGI2241;Architecture and performance of computer systems;Ramin Sadre;Finalité spécialisée (O);1;6;
-LINGI2251;Software Quality Assurance;Charles Pecheur;Ingénierie logicielle (O);2;5;
-LINGI2252;Software Maintenance and Evolution;Kim Mens;Ingénierie logicielle (O);1;5;
-LINGI2255;Software engineering project;Kim Mens;Finalité spécialisée (O);1;6;
-LINGI2261;Artificial intelligence : representation and reasoning;Yves Deville;Finalité spécialisée (O);1;6;
-LINGI2262;Machine Learning : classification and evaluation ;Pierre Dupont;Intelligence artificielle (O), Science des données (O);2;5;
-LINGI2263;Computational Linguistics;Pierre Dupont,Cédrick Fairon;Intelligence artificielle (O);1;5;
-LINGI2266;Advanced Algorithms for Optimization;Pierre Schaus;Intelligence artificielle (O), Science des données;1;5;
-LINGI2315;Design of Embedded and real-time systems;Jean-Didier Legat;Sécurité et réseaux;2;5;
-LINGI2347;Computer system security;Ramin Sadre;Sécurité et réseaux (O), Ingénierie logicielle;2;5;
-LINGI2348;Information theory and coding;Jérôme Louveaux,Olivier Pereira;Sécurité et réseaux, Science des données;2;5;
-LINGI2349;Networking and security seminar;Olivier Bonaventure;Tronc commun;1;3;seulement en MA2
-LINGI2355;Advanced questions in software engineering ;Siegfried Nijssen;Ingénierie logicielle;2;5;
-LINGI2359;Software engineering and programming systems seminar ;Kim Mens;Tronc commun;1;3;seulement en MA2
-LINGI2365;Constraint programming;Yves Deville,Christophe Lecoutre;Intelligence artificielle (O), Ingénierie logicielle, Science des données;2;5;préalable : LINGI2261
-LINGI2369;Artificial intelligence and machine learning seminar;Pierre Dupont,Pierre Schaus;Tronc commun;1;3;seulement en MA2
-LINGI2399;Industrial seminar in computer science ;Yves Deville,Bernard Geubelle;Autres;2;2;
-LINMA1691;Mathématiques discrètes I : Théorie et algorithmique des graphes ;Vincent Blondel,Jean-Charles Delvenne;Intelligence artificielle;1;5;
-LINMA1702;Modèles et méthodes d'optimisation I ;François Glineur;Intelligence artificielle;2;5;
-LINMA2450;Combinatorial optimization ;Jean-Charles Delvenne,Julien Hendrickx;Intelligence artificielle, Science des données;1;5;
-LINMA2470;Stochastic modelling;Philippe Chevalier;Sécurité et réseaux, Science des données;2;5;
-LINMA2471;Optimization models and methods;François Glineur;Science des données;1;5;
-LINMA2472;Algorithms in data science;Jean-Charles Delvenne,Gautier Krings;Science des données (O), Intelligence artificielle;1;5;
-LINMA2710;Scientific computing;Pierre-Antoine Absil,Anthony Papavasiliou;Science des données (O);2;5;
-LMAT2450;Cryptography;François Koeune,Olivier Pereira;Sécurité et réseaux, Science des données;1;5;
-LMECA2170;Numerical Geometry;Vincent Legat,Jean-François Remacle;Science des données;1;5;
-LNEER2500A;Séminaire d'insertion professionnelle: néerlandais - niveau moyen;Isabelle Demeulenaere,Mariken Smit;Autres;1;3;
-LNEER2500B;Séminaire d'insertion professionnelle: néerlandais - niveau moyen;Isabelle Demeulenaere,Mariken Smit;Autres;2;3;
-LNEER2600A;Séminaire d'insertion professionnelle: néerlandais - niveau approfondi  ;Isabelle Demeulenaere ;Autres;1;3;
-LNEER2600B;Séminaire d'insertion professionnelle: néerlandais - niveau approfondi  ;Isabelle Demeulenaere ;Autres;2;3;
-LSINF2224;Programming methods;Charles Pecheur;Ingénierie logicielle;2;5;
-LSINF2275;Data mining and decision making;Marco Saerens;Science des données (O), Intelligence artificielle;2;5;
-LSINF2335;Programming paradigms;Kim Mens;Ingénierie logicielle;2;5;
-LSINF2345;Distributed application design;Peter Van Roy;Ingénierie logicielle (O), Sécurité et réseaux;2;5;
-LSINF2382;Computer supported collaborative work;Jean Vanderdonckt;Ingénierie logicielle;2;5;préalable : LINGI2255
-LSINF2990;Travail de fin d'études;Étudiant;Tronc commun (O);0;28;seulement en MA2
-LTECO2100;Questions de sciences religieuses : lectures bibliques;Hans Ausloos;Tronc commun;2;2;
-LTECO2200;Questions de sciences religieuses : christianisme et questions de sens;Dominique Martens;Tronc commun;1;2;
-LTECO2300;Questions de sciences religieuses : questions d'éthique ;Marcela Lobo Bustamante;Tronc commun;2;2;
+Code de cours	Intitulé du cours	Professeur	Option	Quadri	Crédits	Commentaire
+LALLE2500	Séminaire d'insertion professionnelle: allemand	Caroline Klein,Ann Rinder	Autres	0	3
+LALLE2501	Séminaire d'insertion professionnelle: allemand	Caroline Klein,Ann Rinder	Autres	0	5
+LELEC2870	Machine Learning : regression, dimensionality reduction and data visualization	John Lee,Michel Verleysen	Intelligence artificielle, Science des données	1	5
+LELEC2885	Image processing and computer vision	Christophe De Vleeschouwer,Laurent Jacques	Intelligence artificielle	1	5
+LESPA2600	Séminaire d'insertion professionnelle - Epagnol (B2.2 /C1)	Paula Lorente Fernandez	Autres	1	3
+LESPA2601	Séminaire d'insertion professionnelle - Epagnol (B2.2 /C1)	Paula Lorente Fernandez	Autres	1	5
+LFSA2202	Ethics and ICT	Axel Gosseries,Maxime Lambrecht	Autres	2	3
+LFSA2210	Organisation et ressources humaines	John Cultiaux	Tronc commun (O)	2	3
+LFSA2351A	Dynamique des groupes (1er semestre)	Piotr Sobieski,Vincent Wertz	Autres	1	3
+LFSA2351B	Dynamique des groupes (2ème semestre)	Piotr Sobieski,Vincent Wertz	Autres	2	3
+LFSA2995	Stage en entreprise	Jean-Pierre Raskin	Autres	0	10	seulement en MA2
+LFSA2996	Stage en entreprise	Jean-Pierre Raskin	Autres	0	5	seulement en MA2
+LGBIO2010	Bioinformatics	Pierre Dupont,Michel Ghislain	Intelligence artificielle	2	5
+LINGI2132	Language and translators	Pierre Schaus	Finalité spécialisée (O)	2	6
+LINGI2142	Computer networks: configuration and management	Olivier Bonaventure	Sécurité et réseaux (O)	2	5
+LINGI2143	Concurrent systems : models and analysis	Charles Pecheur	Ingénierie logicielle (O), Sécurité et réseaux	1	5
+LINGI2144	Secured systems engineering	Gildas Avoine	Sécurité et réseaux	1	5	préalable : LINGI2347
+LINGI2145	Cloud Computing	Damien Leroy	Sécurité et réseaux (O), Ingénierie logicielle, Intelligence artificielle	1	5
+LINGI2146	Mobile and Embedded Computing	Ramin Sadre	Sécurité et réseaux (O)	2	5
+LINGI2172	Databases	Siegfried Nijssen	Finalité spécialisée (O)	2	6
+LINGI2241	Architecture and performance of computer systems	Ramin Sadre	Finalité spécialisée (O)	1	6
+LINGI2251	Software Quality Assurance	Charles Pecheur	Ingénierie logicielle (O)	2	5
+LINGI2252	Software Maintenance and Evolution	Kim Mens	Ingénierie logicielle (O)	1	5
+LINGI2255	Software engineering project	Kim Mens	Finalité spécialisée (O)	1	6
+LINGI2261	Artificial intelligence : representation and reasoning	Yves Deville	Finalité spécialisée (O)	1	6
+LINGI2262	Machine Learning : classification and evaluation 	Pierre Dupont	Intelligence artificielle (O), Science des données (O)	2	5
+LINGI2263	Computational Linguistics	Pierre Dupont,Cédrick Fairon	Intelligence artificielle (O)	1	5
+LINGI2266	Advanced Algorithms for Optimization	Pierre Schaus	Intelligence artificielle (O), Science des données	1	5
+LINGI2315	Design of Embedded and real-time systems	Jean-Didier Legat	Sécurité et réseaux	2	5
+LINGI2347	Computer system security	Ramin Sadre	Sécurité et réseaux (O), Ingénierie logicielle	2	5
+LINGI2348	Information theory and coding	Jérôme Louveaux,Olivier Pereira	Sécurité et réseaux, Science des données	2	5
+LINGI2349	Networking and security seminar	Olivier Bonaventure	Tronc commun	1	3	seulement en MA2, minimum un séminaire
+LINGI2355	Advanced questions in software engineering 	Siegfried Nijssen	Ingénierie logicielle	2	5
+LINGI2359	Software engineering and programming systems seminar 	Kim Mens	Tronc commun	1	3	seulement en MA2, minimum un séminaire
+LINGI2365	Constraint programming	Yves Deville,Christophe Lecoutre	Intelligence artificielle (O), Ingénierie logicielle, Science des données	2	5	préalable : LINGI2261
+LINGI2369	Artificial intelligence and machine learning seminar	Pierre Dupont,Pierre Schaus	Tronc commun	1	3	seulement en MA2, minimum un séminaire
+LINGI2399	Industrial seminar in computer science 	Yves Deville,Bernard Geubelle	Autres	2	2
+LINMA1691	Mathématiques discrètes I : Théorie et algorithmique des graphes 	Vincent Blondel,Jean-Charles Delvenne	Intelligence artificielle	1	5
+LINMA1702	Modèles et méthodes d'optimisation I 	François Glineur	Intelligence artificielle	2	5
+LINMA2450	Combinatorial optimization 	Jean-Charles Delvenne,Julien Hendrickx	Intelligence artificielle, Science des données	1	5
+LINMA2470	Stochastic modelling	Philippe Chevalier	Sécurité et réseaux, Science des données	2	5
+LINMA2471	Optimization models and methods	François Glineur	Science des données	1	5
+LINMA2472	Algorithms in data science	Jean-Charles Delvenne,Gautier Krings	Science des données (O), Intelligence artificielle	1	5
+LINMA2710	Scientific computing	Pierre-Antoine Absil,Anthony Papavasiliou	Science des données (O)	2	5
+LMAT2450	Cryptography	François Koeune,Olivier Pereira	Sécurité et réseaux, Science des données	1	5
+LMECA2170	Numerical Geometry	Vincent Legat,Jean-François Remacle	Science des données	1	5
+LNEER2500A	Séminaire d'insertion professionnelle: néerlandais - niveau moyen	Isabelle Demeulenaere,Mariken Smit	Autres	1	3
+LNEER2500B	Séminaire d'insertion professionnelle: néerlandais - niveau moyen	Isabelle Demeulenaere,Mariken Smit	Autres	2	3
+LNEER2600A	Séminaire d'insertion professionnelle: néerlandais - niveau approfondi  	Isabelle Demeulenaere 	Autres	1	3
+LNEER2600B	Séminaire d'insertion professionnelle: néerlandais - niveau approfondi  	Isabelle Demeulenaere 	Autres	2	3
+LSINF2224	Programming methods	Charles Pecheur	Ingénierie logicielle	2	5
+LSINF2275	Data mining and decision making	Marco Saerens	Science des données (O), Intelligence artificielle	2	5
+LSINF2335	Programming paradigms	Kim Mens	Ingénierie logicielle	2	5
+LSINF2345	Distributed application design	Peter Van Roy	Ingénierie logicielle (O), Sécurité et réseaux	2	5
+LSINF2382	Computer supported collaborative work	Jean Vanderdonckt	Ingénierie logicielle	2	5	préalable : LINGI2255
+LSINF2990	Travail de fin d'études	Étudiant	Tronc commun (O)	0	28	seulement en MA2
+LTECO2100	Questions de sciences religieuses : lectures bibliques	Hans Ausloos	Tronc commun	2	2	minimum un cours de théologie
+LTECO2200	Questions de sciences religieuses : christianisme et questions de sens	Dominique Martens	Tronc commun	1	2	minimum un cours de théologie
+LTECO2300	Questions de sciences religieuses : questions d'éthique 	Marcela Lobo Bustamante	Tronc commun	2	2	minimum un cours de théologie

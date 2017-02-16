@@ -1,5 +1,16 @@
 .navbar-brand {
-	font-size: 2em;
+	display: flex;
+	align-items: center;
+	font-size: 1.2em;
+}
+
+.btn-nav {
+	padding-left: 12px;
+}
+
+.navbar-text {
+	padding-left: 12px;
+	font-size: 1.2em;
 }
 
 .logo {
@@ -7,7 +18,7 @@
 }
 
 .form-space {
-	width: 50px;
+	width: 100px;
 }
 
 .form-inline {
@@ -26,6 +37,11 @@ ul.list-group {
 
 .table > tbody > tr > td {
 	vertical-align: middle;
+}
+
+.btn-xs {
+	margin-left: 3px;
+	margin-right: 3px;
 }
 
 body {

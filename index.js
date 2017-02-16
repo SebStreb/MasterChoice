@@ -14,34 +14,38 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(function (req, res, next) {
 	course.get(function (courses, profNames, optNames) {
-		req.courses = courses;
-		req.profNames = profNames;
-		req.optNames = optNames;
+		req.info = {
+			courses: courses,
+			profNames: profNames,
+			optNames: optNames
+		};
 		next();
 	});
 });
 
 app.get('/professor/:prof', function (req, res, next) {
 	var filter = [];
-	req.courses.forEach(function (course) {
+	req.info.courses.forEach(function (course) {
 		course.professors.forEach(function (professor) {
 			if (professor.name === req.params.prof)
 				filter.push(course);
 		});
 	});
-	req.courses = filter;
+	req.info.courses = filter;
+	req.info.name = req.params.prof;
 	next();
 });
 
 app.get('/option/:opt', function (req, res, next) {
 	var filter = [];
-	req.courses.forEach(function (course) {
+	req.info.courses.forEach(function (course) {
 		course.options.forEach(function (option) {
 			if (option.name === req.params.opt)
 				filter.push(course);
 		});
 	});
-	req.courses = filter;
+	req.info.courses = filter;
+	req.info.name = req.params.opt;
 	next();
 });
 
@@ -54,9 +58,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(function (req, res) {
-	res.render('index', {courses: req.courses,
-		profNames: req.profNames,
-		optNames: req.optNames});
+	console.log(req.info);
+	res.render('index', req.info);
 });
 
 app.use(function(error, req, res, next) {

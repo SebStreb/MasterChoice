@@ -5,7 +5,7 @@ var data = fs.readFileSync("./database/MasterChoice.csv", 'utf8');
 
 data.trim().split('\n').forEach(function (course, index) {
 	if (index == 0) return;
-	var fields = course.split(';');
+	var fields = course.split('\t');
 	var professors = [];
 	fields[2].split(',').forEach(function (professor, index) {
 		professors[index] = {name: professor.trim()};
