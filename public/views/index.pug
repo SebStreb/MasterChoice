@@ -8,6 +8,7 @@ html
 		link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
 		script(src="/scripts/jquery.min.js")
 		script(src="/scripts/bootstrap.min.js")
+		script(src="/scripts/selection.js")
 		script.
 			function filterProf() {
 				location.href = '/professor/' + $("#prof").val();
@@ -15,7 +16,10 @@ html
 			function filterOpt() {
 				location.href = '/option/' + $("#opt").val();
 			};
-		title MasterChoice - #{name ? name : 'Tous les cours'}
+			function add(code, year) {
+				console.log(code + " - " + year);
+			};
+		title MasterChoice #{name ? ' > ' + name : ''}
 
 	body
 
@@ -30,23 +34,65 @@ html
 
 					a.navbar-brand(href="/").
 						#[img.logo(src="/img/epl.png")]
-						MasterChoice - #{name ? name : 'Tous les cours'}
+						MasterChoice
+					.navbar-text #{name ? '>\t' + name : ''}
 
 				.collapse.navbar-collapse#collapse
 					ul.nav.navbar-nav.navbar-right
+						li.navbar-text Nombre de crédits choisis :
 						li.navbar-text
-							strong Nombre de crédits choisis : …
+							strong#total …
 						li.navbar-text
 						li.btn-nav
 							button.btn.btn-primary.navbar-btn(data-toggle="modal", data-target="#info") Plus de détails
 						li.navbar-text
+
+		.modal.fade#info(role="dialog")
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button.close(type="button", data-dismiss="modal") &times;
+						h2 Votre choix de programme
+					.modal-body
+						h3 Total
+						p Nombre de crédits sur tout le master : #[strong#total …]
+						p Options choisies :
+						ul#options
+						h3 Première année de Master
+						.row
+							.col-md-6
+								h4 Quadrimestre 1
+								p Nombre de crédits : #[strong#q1 …]
+								p Cours choisis :
+								ul#q1c
+							.col-md-6
+								h4 Quadrimestre 2
+								p Nombre de crédits : #[strong#q2 …]
+								p Cours choisis :
+								ul#q2c
+						h3 Deuxième année de Master
+						.row
+							.col-md-6
+								h4 Quadrimestre 1
+								p Nombre de crédits : #[strong#q3 …]
+								p Cours choisis :
+								ul#q3c
+							.col-md-6
+								h4 Quadrimestre 2
+								p Nombre de crédits : #[strong#q4 …]
+								p Cours choisis :
+								ul#q4c
+					.modal-footer
+						button.btn.btn-primary Sauvegarder
+						button.btn.btn-primary Importer
+						button.btn.btn-default(type="button", data-dismiss="modal") Close
 
 		.container-fluid
 			.form-inline.text-center
 				.form-group
 					label(for="prof") Filtrer par professeur :
 					select.form-control#prof
-						option
+						option #{profNames.indexOf(name) != -1 ? name : ''}
 						each name in profNames
 							option #{name}
 					button.btn.btn-primary(onclick="filterProf();") Filtrer
@@ -54,7 +100,7 @@ html
 				.form-group
 					label(for="opt") Filtrer par option :
 					select.form-control#opt
-						option
+						option #{optNames.indexOf(name) != -1 ? name : ''}
 						each name in optNames
 							option #{name}
 					button.btn.btn-primary(onclick="filterOpt();") Filtrer
@@ -63,12 +109,12 @@ html
 				table.table.table-striped
 					thead
 						tr
-							th.col-xs-1 Code
-							th.col-xs-3 Nom du cours
-							th.col-xs-2 Professeur
-							th.col-xs-2 Option
-							th.col-xs-1 Crédits
-							th.col-xs-1 Quadri
+							th.col-xs-1 Code du cours
+							th.col-xs-3 Intitulé du cours
+							th.col-xs-2 Professeurs
+							th.col-xs-2 Options (bleu = cours requis)
+							th.col-xs-1 Crédits (ECTS)
+							th.col-xs-1 Quadrimestre
 							th.col-xs-1 Commentaire
 							th.col-xs-1 Ajouter
 					tbody
@@ -76,8 +122,7 @@ html
 							tr
 								td
 									strong #{course.code}
-								td
-									em #{course.title}
+								td #{course.title}
 								td
 									ul.list-group
 										each prof in course.professors
@@ -88,7 +133,8 @@ html
 										each opt in course.options
 											if opt.required
 												li.list-group-item.list-group-item-info
-													a(href="/option/" + opt.name) #{opt.name}
+													strong
+														a(href="/option/" + opt.name) #{opt.name}
 											else
 												li.list-group-item
 													a(href="/option/" + opt.name) #{opt.name}
@@ -98,8 +144,8 @@ html
 									small
 										i #{course.comments}
 								td
-									button.btn.btn-primary.btn-xs MA1
-									button.btn.btn-primary.btn-xs MA2
+									button.btn.btn-primary.btn-xs(onclick="add('" + course.code + "', 1);") MA1
+									button.btn.btn-primary.btn-xs(onclick="add('" + course.code + "', 2);") MA2
 
 		footer
 			p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle

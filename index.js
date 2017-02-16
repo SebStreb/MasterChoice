@@ -58,7 +58,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(function (req, res) {
-	console.log(req.info);
 	res.render('index', req.info);
 });
 
