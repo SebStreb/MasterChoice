@@ -26,15 +26,15 @@ LINGI2255	Software engineering project	Kim Mens	Finalité spécialisée (O)	1	6
 LINGI2261	Artificial intelligence : representation and reasoning	Yves Deville	Finalité spécialisée (O)	1	6
 LINGI2262	Machine Learning : classification and evaluation 	Pierre Dupont	Intelligence artificielle (O), Science des données (O)	2	5
 LINGI2263	Computational Linguistics	Pierre Dupont,Cédrick Fairon	Intelligence artificielle (O)	1	5
-LINGI2266	Advanced Algorithms for Optimization	Pierre Schaus	Intelligence artificielle (O), Science des données	1	5
+LINGI2266	Advanced Algorithms for Optimization	Pierre Schaus	Intelligence artificielle (O), Science des données	1	5
 LINGI2315	Design of Embedded and real-time systems	Jean-Didier Legat	Sécurité et réseaux	2	5
 LINGI2347	Computer system security	Ramin Sadre	Sécurité et réseaux (O), Ingénierie logicielle	2	5
 LINGI2348	Information theory and coding	Jérôme Louveaux,Olivier Pereira	Sécurité et réseaux, Science des données	2	5
-LINGI2349	Networking and security seminar	Olivier Bonaventure	Tronc commun	1	3	seulement en MA2, minimum un séminaire
+LINGI2349	Networking and security seminar	Olivier Bonaventure	Tronc commun	1	3	seulement en MA2, choisir un séminaire
 LINGI2355	Advanced questions in software engineering 	Siegfried Nijssen	Ingénierie logicielle	2	5
-LINGI2359	Software engineering and programming systems seminar 	Kim Mens	Tronc commun	1	3	seulement en MA2, minimum un séminaire
+LINGI2359	Software engineering and programming systems seminar 	Kim Mens	Tronc commun	1	3	seulement en MA2, choisir un séminaire
 LINGI2365	Constraint programming	Yves Deville,Christophe Lecoutre	Intelligence artificielle (O), Ingénierie logicielle, Science des données	2	5	préalable : LINGI2261
-LINGI2369	Artificial intelligence and machine learning seminar	Pierre Dupont,Pierre Schaus	Tronc commun	1	3	seulement en MA2, minimum un séminaire
+LINGI2369	Artificial intelligence and machine learning seminar	Pierre Dupont,Pierre Schaus	Tronc commun	1	3	seulement en MA2, choisir un séminaire
 LINGI2399	Industrial seminar in computer science 	Yves Deville,Bernard Geubelle	Autres	2	2
 LINMA1691	Mathématiques discrètes I : Théorie et algorithmique des graphes 	Vincent Blondel,Jean-Charles Delvenne	Intelligence artificielle	1	5
 LINMA1702	Modèles et méthodes d'optimisation I 	François Glineur	Intelligence artificielle	2	5
@@ -55,6 +55,6 @@ LSINF2335	Programming paradigms	Kim Mens	Ingénierie logicielle	2	5
 LSINF2345	Distributed application design	Peter Van Roy	Ingénierie logicielle (O), Sécurité et réseaux	2	5
 LSINF2382	Computer supported collaborative work	Jean Vanderdonckt	Ingénierie logicielle	2	5	préalable : LINGI2255
 LSINF2990	Travail de fin d'études	Étudiant	Tronc commun (O)	0	28	seulement en MA2
-LTECO2100	Questions de sciences religieuses : lectures bibliques	Hans Ausloos	Tronc commun	2	2	minimum un cours de théologie
-LTECO2200	Questions de sciences religieuses : christianisme et questions de sens	Dominique Martens	Tronc commun	1	2	minimum un cours de théologie
-LTECO2300	Questions de sciences religieuses : questions d'éthique 	Marcela Lobo Bustamante	Tronc commun	2	2	minimum un cours de théologie
+LTECO2100	Questions de sciences religieuses : lectures bibliques	Hans Ausloos	Tronc commun	2	2	choisir un cours de théologie
+LTECO2200	Questions de sciences religieuses : christianisme et questions de sens	Dominique Martens	Tronc commun	1	2	choisir un cours de théologie
+LTECO2300	Questions de sciences religieuses : questions d'éthique 	Marcela Lobo Bustamante	Tronc commun	2	2	choisir un cours de théologie

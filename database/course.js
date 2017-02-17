@@ -3,15 +3,17 @@ const mongoose = require('mongoose');
 var course = new mongoose.Schema({
 	code: String,
 	title: String,
-	professors: [{name: String}],
-	options: [{name: String, required: Boolean}],
+	professors: [{_id: false, name: String}],
+	options: [{_id: false, name: String, required: Boolean}],
 	credits: Number,
 	semester: Number,
 	comments: String
 });
 
 course.statics.get = function (callback) {
-	this.find(function (err, courses) {
+	this.find()
+	.select('-_id code title professors options credits semester comments')
+	.exec(function (err, courses) {
 		if (err) console.error(err);
 		var profNames = [];
 		var optNames = [];

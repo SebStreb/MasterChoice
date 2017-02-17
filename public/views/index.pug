@@ -10,15 +10,8 @@ html
 		script(src="/scripts/bootstrap.min.js")
 		script(src="/scripts/selection.js")
 		script.
-			function filterProf() {
-				location.href = '/professor/' + $("#prof").val();
-			};
-			function filterOpt() {
-				location.href = '/option/' + $("#opt").val();
-			};
-			function add(code, year) {
-				console.log(code + " - " + year);
-			};
+			var courses = [#{courses}];
+			var selected = [];
 		title MasterChoice #{name ? ' > ' + name : ''}
 
 	body
@@ -44,20 +37,48 @@ html
 							strong#total …
 						li.navbar-text
 						li.btn-nav
-							button.btn.btn-primary.navbar-btn(data-toggle="modal", data-target="#info") Plus de détails
+							button.btn.btn-primary.navbar-btn(data-toggle="modal", data-target="#modal") Plus de détails
+						li.btn-nav
+							button.btn.btn-danger.navbar-btn(onclick="reset()") Reset
 						li.navbar-text
 
-		.modal.fade#info(role="dialog")
-			.modal-dialog
+		.modal.fade#modal(role="dialog")
+			.modal-dialog.modal-lg
 				.modal-content
 					.modal-header
 						button.close(type="button", data-dismiss="modal") &times;
 						h2 Votre choix de programme
-					.modal-body
+					.modal-body#info
 						h3 Total
-						p Nombre de crédits sur tout le master : #[strong#total …]
-						p Options choisies :
-						ul#options
+						p Nombre de crédits sur tout le master : #[strong#total2 …]
+						p Choix d'options :
+						.row
+							.col-md-4
+								h4 Tronc commun
+								p#o1
+							.col-md-4
+								h4 Finalité spécialisée
+								p#o2
+							.col-md-4
+								h4 Autres
+								p#o7
+						.row
+							.col-md-3
+								h4 Intelligence artificielle
+								p#o3
+								p#o3p
+							.col-md-3
+								h4 Ingénierie logicielle
+								p#o4
+								p#o4p
+							.col-md-3
+								h4 Sécurité et réseaux
+								p#o5
+								p#o5p
+							.col-md-3
+								h4 Science des données
+								p#o6
+								p#o6p
 						h3 Première année de Master
 						.row
 							.col-md-6
@@ -119,7 +140,7 @@ html
 							th.col-xs-1 Ajouter
 					tbody
 						each course in courses
-							tr
+							tr(id = course.code)
 								td
 									strong #{course.code}
 								td #{course.title}
@@ -144,8 +165,8 @@ html
 									small
 										i #{course.comments}
 								td
-									button.btn.btn-primary.btn-xs(onclick="add('" + course.code + "', 1);") MA1
-									button.btn.btn-primary.btn-xs(onclick="add('" + course.code + "', 2);") MA2
+									button.btn.btn-primary.btn-xs(onclick="addOrRemove('" + course.code + "', 1);") MA1
+									button.btn.btn-primary.btn-xs(onclick="addOrRemove('" + course.code + "', 2);") MA2
 
 		footer
 			p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle
