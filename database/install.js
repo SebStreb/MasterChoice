@@ -20,3 +20,8 @@ course.find(function (err, courses) {
 		});
 	});
 });
+
+setTimeout(function () {
+	console.log("done ?");
+	process.exit(0);
+}, 5000);
