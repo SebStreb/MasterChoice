@@ -1,0 +1,40 @@
+table.table.table-striped
+	thead
+		tr
+			th.col-xs-1 Code du cours
+			th.col-xs-3 Intitulé du cours
+			th.col-xs-2 Professeurs
+			th.col-xs-2 Options (bleu = cours requis)
+			th.col-xs-1 Crédits (ECTS)
+			th.col-xs-1 Quadrimestre
+			th.col-xs-1 Commentaire
+			th.col-xs-1 Ajouter
+	tbody
+		each course in courses
+			tr(id = course.code)
+				td
+					strong #{course.code}
+				td #{course.title}
+				td
+					ul.list-group
+						each prof in course.professors
+							li.list-group-item
+								a(href="#", onclick="filterProf('"+prof.name+"')") #{prof.name}
+				td
+					ul.list-group
+						each opt in course.options
+							if opt.required
+								li.list-group-item.list-group-item-info
+									strong
+										a(href="#", onclick="filterOpt('"+opt.name+"')") #{opt.name}
+							else
+								li.list-group-item
+									a(href="#", onclick="filterOpt('"+opt.name+"')") #{opt.name}
+				td.text-center #{course.credits}
+				td.text-center #{course.semester}
+				td
+					small
+						i #{course.comments}
+				td
+					button.btn.btn-primary.btn-xs(onclick="addOrRemove('" + course.code + "', 1);") MA1
+					button.btn.btn-primary.btn-xs(onclick="addOrRemove('" + course.code + "', 2);") MA2

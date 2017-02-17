@@ -1,13 +1,53 @@
 $(document).ready(function () {
+	$("#table").load('/all');
+	$("#name1").text("");
+	$("#name2").text("");
+	$("#nameProf").text("");
+	$("#nameOpt").text("");
 	reset();
 });
 
-function filterProf() {
-	location.href = '/professor/' + $("#prof").val();
+function showAll() {
+	$("#table").load('/all', function () {
+		selected.forEach(function (course) {
+			if (course.removed) return;
+			$("#"+course.code).addClass("success");
+		});
+	});
+	$("#name1").text("");
+	$("#name2").text("");
+	$("#nameProf").text("");
+	$("#nameOpt").text("");
+}
+
+function filterProf(prof) {
+	console.log(prof);
+	var query = '/professor/'+prof.replace(/ /g, "%20");
+	$("#table").load(query, function () {
+		selected.forEach(function (course) {
+			if (course.removed) return;
+			$("#"+course.code).addClass("success");
+		});
+	});
+	$("#name1").text(" > " + prof);
+	$("#name2").text(" > " + prof);
+	$("#nameProf").text(prof);
+	$("#nameOpt").text("");
 };
 
-function filterOpt() {
-	location.href = '/option/' + $("#opt").val();
+function filterOpt(opt) {
+	console.log(opt);
+	var query = '/option/'+opt.replace(/ /g, "%20");
+	$("#table").load(query, function () {
+		selected.forEach(function (course) {
+			if (course.removed) return;
+			$("#"+course.code).addClass("success");
+		});
+	});
+	$("#name1").text(" > " + opt);
+	$("#name2").text(" > " + opt);
+	$("#nameProf").text("");
+	$("#nameOpt").text(opt);
 };
 
 function reset() {
@@ -32,11 +72,9 @@ function addOrRemove(code, year) {
 	selected.forEach(function (course) {
 		if (course.code === code && course.removed === false) {
 			console.log("TODO : find a better way to remove a selection");
-			$("#"+code).removeClass("success");
 			course.removed = true;
 			hasBeenFound = true;
 		} else if (course.code === code) {
-			$("#"+code).addClass("success");
 			course.removed = false;
 			course.year = year;
 			hasBeenFound = true;
@@ -66,8 +104,12 @@ function calculateCredits() {
 	var q1c = [], q2c = [], q3c = [], q4c = [];
 	var opts = {"1" : 0, "2" : 0, "3" : 0, "3p" : 0, "4" : 0, "4p" : 0,
 				"5" : 0, "5p" : 0, "6" : 0, "6p" : 0, "7" : 0};
+	courses.forEach(function (course) {
+		$("#"+course.code).removeClass("success");
+	});
 	selected.forEach(function (course) {
 		if (course.removed) return;
+		$("#"+course.code).addClass("success");
 		if (course.year === 1) {
 			if (course.semester === 1) {
 				q1T += course.credits;
@@ -170,7 +212,7 @@ function populateHTML(choice) {
 	$("#q3c").html(q3cS);
 	$("#q4c").html(q4cS);
 	$("#o1").text(choice.opts["1"] + " cours requis sur 4");
-	$("#o2").text(choice.opts["2"] + " cours requis sur 6");
+	$("#o2").text(choice.opts["2"] + " cours requis sur 5");
 	$("#o3").text(choice.opts["3"] + " cours requis sur 4");
 	$("#o3p").text(choice.opts["3p"] + " cours supplémentaires");
 	$("#o4").text(choice.opts["4"] + " cours requis sur 4");
