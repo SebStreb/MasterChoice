@@ -71,7 +71,7 @@ function addOrRemove(code, year) {
 	var hasBeenFound = false;
 	selected.forEach(function (course) {
 		if (course.code === code && course.removed === false) {
-			console.log("TODO : find a better way to remove a selection");
+			//TODO : find a better way to remove a selection
 			course.removed = true;
 			hasBeenFound = true;
 		} else if (course.code === code) {
@@ -113,28 +113,28 @@ function calculateCredits() {
 		if (course.year === 1) {
 			if (course.semester === 1) {
 				q1T += course.credits;
-				q1c.push("[" + course.code + "] " + course.title);
+				q1c.push("<strong>[" + course.code + "]</strong> " + course.title);
 			} else if (course.semester === 2) {
 				q2T += course.credits;
-				q2c.push("[" + course.code + "] " + course.title);
+				q2c.push("<strong>[" + course.code + "]</strong> " + course.title);
 			} else {
 				q1T += course.credits / 2;
 				q2T += course.credits / 2;
-				q1c.push("[" + course.code + "] " + course.title);
-				q2c.push("[" + course.code + "] " + course.title);
+				q1c.push("<strong>[" + course.code + "]</strong> " + course.title);
+				q2c.push("<strong>[" + course.code + "]</strong> " + course.title);
 			}
 		} else {
 			if (course.semester === 1) {
 				q3T += course.credits;
-				q3c.push("[" + course.code + "] " + course.title);
+				q3c.push("<strong>[" + course.code + "]</strong> " + course.title);
 			} else if (course.semester === 2) {
 				q4T += course.credits;
-				q4c.push("[" + course.code + "] " + course.title);
+				q4c.push("<strong>[" + course.code + "]</strong> " + course.title);
 			} else {
 				q3T += course.credits / 2;
 				q4T += course.credits / 2;
-				q3c.push("[" + course.code + "] " + course.title);
-				q4c.push("[" + course.code + "] " + course.title);
+				q3c.push("<strong>[" + course.code + "]</strong> " + course.title);
+				q4c.push("<strong>[" + course.code + "]</strong> " + course.title);
 			}
 		}
 		course.options.forEach(function (option) {
@@ -187,10 +187,10 @@ function calculateCredits() {
 function populateHTML(choice) {
 	$("#total").text(choice.q1T+choice.q2T+choice.q3T+choice.q4T);
 	$("#total2").text(choice.q1T+choice.q2T+choice.q3T+choice.q4T);
-	$("#q1").text(choice.q1T);
-	$("#q2").text(choice.q2T);
-	$("#q3").text(choice.q3T);
-	$("#q4").text(choice.q4T);
+	$("#q1").html(choice.q1T);
+	$("#q2").html(choice.q2T);
+	$("#q3").html(choice.q3T);
+	$("#q4").html(choice.q4T);
 	var q1cS = "";
 	choice.q1c.forEach(function (course) {
 		q1cS += "<li>" + course + "</li>";
@@ -211,15 +211,15 @@ function populateHTML(choice) {
 	$("#q2c").html(q2cS);
 	$("#q3c").html(q3cS);
 	$("#q4c").html(q4cS);
-	$("#o1").text(choice.opts["1"] + " cours requis sur 4");
-	$("#o2").text(choice.opts["2"] + " cours requis sur 5");
-	$("#o3").text(choice.opts["3"] + " cours requis sur 4");
-	$("#o3p").text(choice.opts["3p"] + " cours supplémentaires");
-	$("#o4").text(choice.opts["4"] + " cours requis sur 4");
-	$("#o4p").text(choice.opts["4p"] + " cours supplémentaires");
-	$("#o5").text(choice.opts["5"] + " cours requis sur 4");
-	$("#o5p").text(choice.opts["5p"] + " cours supplémentaires");
-	$("#o6").text(choice.opts["6"] + " cours requis sur 4");
-	$("#o6p").text(choice.opts["6p"] + " cours supplémentaires");
-	$("#o7").text(choice.opts["7"] + " cours supplémentaires");
+	$("#o1").html("<strong>" + choice.opts["1"] + "</strong> cours requis sur 4");
+	$("#o2").html("<strong>" + choice.opts["2"] + "</strong> cours requis sur 5");
+	$("#o3").html("<strong>" + choice.opts["3"] + "</strong> cours requis sur 4");
+	$("#o3p").html("<strong>" + choice.opts["3p"] + "</strong> cours supplémentaires");
+	$("#o4").html("<strong>" + choice.opts["4"] + "</strong> cours requis sur 4");
+	$("#o4p").html("<strong>" + choice.opts["4p"] + "</strong> cours supplémentaires");
+	$("#o5").html("<strong>" + choice.opts["5"] + "</strong> cours requis sur 4");
+	$("#o5p").html("<strong>" + choice.opts["5p"] + "</strong> cours supplémentaires");
+	$("#o6").html("<strong>" + choice.opts["6"] + "</strong> cours requis sur 4");
+	$("#o6p").html("<strong>" + choice.opts["6p"] + "</strong> cours supplémentaires");
+	$("#o7").html("<strong>" + choice.opts["7"] + "</strong> cours supplémentaires");
 };
