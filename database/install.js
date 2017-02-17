@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const course = require('./course.js');
 const data = require('./data.js');
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/db');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_tfxxztbl:umk61l2ukm8gnhago7lko8vnvd@ds155529.mlab.com:55529/heroku_tfxxztbl');
 
 course.find(function (err, courses) {
 	if (err) console.error(err);

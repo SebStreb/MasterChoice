@@ -72,7 +72,7 @@ app.use(function(error, req, res, next) {
 	res.status(500).render('500', {error: error});
 });
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/db');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_tfxxztbl:umk61l2ukm8gnhago7lko8vnvd@ds155529.mlab.com:55529/heroku_tfxxztbl');
 
 console.log("Server listening on port 3000");
 app.listen(3000);
