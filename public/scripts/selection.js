@@ -21,7 +21,6 @@ function showAll() {
 }
 
 function filterProf(prof) {
-	console.log(prof);
 	var query = '/professor/'+prof.replace(/ /g, "%20");
 	$("#table").load(query, function () {
 		selected.forEach(function (course) {
@@ -35,7 +34,6 @@ function filterProf(prof) {
 };
 
 function filterOpt(opt) {
-	console.log(opt);
 	var query = '/option/'+opt.replace(/ /g, "%20");
 	$("#table").load(query, function () {
 		selected.forEach(function (course) {
@@ -71,7 +69,6 @@ function save() {
 
 function from() {
 	var name = "selected" + "=";
-	console.log(document.cookie);
 	var cookie = decodeURIComponent(document.cookie);
 	var selection = cookie.substring(name.length, cookie.length);
 	selection.split(',').forEach(function (sel) {
@@ -82,7 +79,6 @@ function from() {
 };
 
 function addOrRemove(code, year) {
-	console.log(year);
 	var hasBeenFound = false;
 	selected.forEach(function (course) {
 		if (course.code === code && course.removed === false) {

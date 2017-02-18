@@ -77,17 +77,8 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_tfxxztbl:umk61l2u
 
 function normalizePort(val) {
 	var port = parseInt(val, 10);
-
-	if (isNaN(port)) {
-		// named pipe
-		return val;
-	}
-
-	if (port >= 0) {
-		// port number
-		return port;
-	}
-
+	if (isNaN(port)) return val; // named pipe
+	if (port >= 0) return port; // port number
 	return false;
 }
 
