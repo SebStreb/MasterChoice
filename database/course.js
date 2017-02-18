@@ -27,7 +27,7 @@ course.statics.get = function (callback) {
 					optNames.push(opt.name);
 			});
 		});
-		callback(courses, profNames.sort(), optNames.sort());
+		callback(courses.sort(), profNames.sort(), optNames.sort());
 	});
 };
 

@@ -8,6 +8,7 @@ html
 		link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
 		script(src="/scripts/jquery.min.js")
 		script(src="/scripts/bootstrap.min.js")
+		script(src="/scripts/events.js")
 		script(src="/scripts/selection.js")
 		script.
 			var courses = [#{courses}];
@@ -28,16 +29,16 @@ html
 					a.navbar-brand(href="/").
 						#[img.logo(src="/img/epl.png")]
 						MasterChoice
-					.navbar-text#name2
+					.navbar-text#name
 
 				.collapse.navbar-collapse#collapse
 					ul.nav.navbar-nav.navbar-right
-						li.navbar-text Nombre de crédits choisis :
-						li.navbar-text
-							strong#total
+						li.navbar-text Nombre de crédits choisis : #[strong#total]
 						li.navbar-text
 						li.btn-nav
 							button.btn.btn-primary.navbar-btn(data-toggle="modal", data-target="#modal") Plus de détails
+						li.btn-nav
+							button.btn.btn-primary.navbar-btn(onclick="save();") Sauvegarder
 						li.btn-nav
 							button.btn.btn-danger.navbar-btn(onclick="reset()") Reset
 						li.navbar-text
@@ -49,8 +50,28 @@ html
 						button.close(type="button", data-dismiss="modal") &times;
 						h2 Votre choix de programme
 					.modal-body#info
-						h3 Total
-						p Nombre de crédits sur tout le master : #[strong#total2]
+						h3 Nombre de crédits sur tout le master : #[strong#total2]
+						h3 Première année de Master
+						.row
+							.col-md-6
+								h4 Quadrimestre 1
+								p Nombre de crédits : #[strong#q1]
+								ul#q1Courses
+							.col-md-6
+								h4 Quadrimestre 2
+								p Nombre de crédits : #[strong#q2]
+								ul#q2Courses
+						h3 Deuxième année de Master
+						.row
+							.col-md-6
+								h4 Quadrimestre 1
+								p Nombre de crédits : #[strong#q3]
+								ul#q3Courses
+							.col-md-6
+								h4 Quadrimestre 2
+								p Nombre de crédits : #[strong#q4]
+								ul#q4Courses
+						h3 Détail des options
 						.row
 							.col-md-4
 								h4 Tronc commun
@@ -78,29 +99,7 @@ html
 								h4 Science des données
 								p#o6
 								p#o6p
-						h3 Première année de Master
-						.row
-							.col-md-6
-								h4 Quadrimestre 1
-								p Nombre de crédits : #[strong#q1]
-								ul#q1c
-							.col-md-6
-								h4 Quadrimestre 2
-								p Nombre de crédits : #[strong#q2]
-								ul#q2c
-						h3 Deuxième année de Master
-						.row
-							.col-md-6
-								h4 Quadrimestre 1
-								p Nombre de crédits : #[strong#q3]
-								ul#q3c
-							.col-md-6
-								h4 Quadrimestre 2
-								p Nombre de crédits : #[strong#q4]
-								ul#q4c
 					.modal-footer
-						button.btn.btn-primary Sauvegarder
-						button.btn.btn-primary Importer
 						button.btn.btn-default(type="button", data-dismiss="modal") Close
 
 		.container-fluid
