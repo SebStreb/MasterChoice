@@ -61,9 +61,12 @@ function save() {
 	d.setTime(d.getTime() + (30*24*60*60*1000)); // 1 month
 	var expires = "expires="+ d.toUTCString();
 	var selection = "";
+	var toShow = "";
 	selected.forEach(function (course) {
-		selection += "(" + course.code + ":" + course.year + "),"
+		selection += course.code + ":" + course.year + ",";
+		toShow += "[" course.code + "] " + course.title + "(" + course.credits + " ECTS) - MA" + course.year + " Q" + course.semester + "\n";
 	});
+	alert("Votre sélection de cours :\n" + toShow + "\n\nSauvegardé en cookie, la sélection restera valable pendant un mois à chaque visite du site.");
 	document.cookie = "selected" + "=" + selection.substring(0,selection.length-1) + ";" + expires + ";path=/";
 };
 
@@ -72,9 +75,8 @@ function from() {
 	var cookie = decodeURIComponent(document.cookie);
 	var selection = cookie.substring(name.length, cookie.length);
 	selection.split(',').forEach(function (sel) {
-		var select = sel.split(':');
-		var code = select[0].substring(1);
-		var year = select[1].substring(0,select[1].length-1)
+		var code = sel.split(':')[0];
+		var year = sel.split(':')[1];
 		addOrRemove(code, parseInt(year));
 	});
 	calculateCredits();
