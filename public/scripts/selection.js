@@ -65,7 +65,7 @@ function save() {
 	selected.forEach(function (course) {
 		if (course.removed) return;
 		selection += course.code + ":" + course.year + ",";
-		toShow += "- [" + course.code + "] " + course.title + " (" + course.credits + " ECTS) - MA" + course.year + " Q" + course.semester + "\n";
+		toShow += "- [" + course.code + "] " + course.title + " (" + course.credits + ") - MA" + course.year + " Q" + course.semester + "\n";
 	});
 	alert("Votre sélection de cours :\n\n" + toShow + "\nGrâce à l'utilisation de cookies, la sélection sera récupérée à chaque visite du site pour un mois.");
 	document.cookie = "selected" + "=" + selection.substring(0,selection.length-1) + ";" + expires + ";path=/";

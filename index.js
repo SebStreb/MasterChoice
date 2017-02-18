@@ -3,6 +3,7 @@ const http = require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const fs = require('fs');
 const pug = require('pug');
 const course = require('./database/course.js');
 const table = pug.compileFile('public/views/table.pug')
@@ -11,7 +12,14 @@ var app = express();
 app.set('views', './public/views');
 app.set('view engine', 'pug');
 
-app.use(morgan('dev'));
+var accessLogStream = fs.createWriteStream('access.log', {flags: 'a'});
+app.use(morgan('[:date[clf]] \t :url \t :status \t :remote-addr', {
+	skip: function (req, res) {
+		return req.path.startsWith('/img') || req.path.startsWith('/scripts') || req.path.startsWith('/stylesheets');
+	},
+	stream: accessLogStream
+}));
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
