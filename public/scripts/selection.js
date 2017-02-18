@@ -73,7 +73,9 @@ function from() {
 	var selection = cookie.substring(name.length, cookie.length);
 	selection.split(',').forEach(function (sel) {
 		var select = sel.split(':');
-		addOrRemove(select[0].substring(1), select[1].substring(0,select[1].length-1))
+		var code = select[0].substring(1);
+		var year = select[1].substring(0,select[1].length-1)
+		addOrRemove(code, parseInt(year));
 	});
 	calculateCredits();
 };
