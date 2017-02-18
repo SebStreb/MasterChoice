@@ -126,7 +126,7 @@ function calculateCredits() {
 	selected.forEach(function (course) {
 		if (course.removed) return;
 		$("#"+course.code).addClass("success");
-		course.desc = "<strong>[" + course.code + "]</strong> " + course.title;
+		course.desc = "<strong>[" + course.code + "]</strong> " + course.title + "(" + course.credits + ")";
 		if (course.year === 1) {
 			if (course.semester === 1) {
 				q1 += course.credits;
