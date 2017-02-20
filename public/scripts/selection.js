@@ -7,7 +7,7 @@ $(document).ready(function () {
 });
 
 function showAll() {
-	$("#table").load('/all', function () {
+	$("#table").load(master+'/all', function () {
 		selected.forEach(function (course) {
 			if (course.removed) return;
 			$("#"+course.code).addClass("success");
@@ -19,7 +19,7 @@ function showAll() {
 }
 
 function filterProf(prof) {
-	var query = '/professor/'+prof.replace(/ /g, "%20");
+	var query = master+'/professor/'+prof.replace(/ /g, "%20");
 	$("#table").load(query, function () {
 		selected.forEach(function (course) {
 			if (course.removed) return;
@@ -32,7 +32,7 @@ function filterProf(prof) {
 };
 
 function filterOpt(opt) {
-	var query = '/option/'+opt.replace(/ /g, "%20");
+	var query = master+'/option/'+opt.replace(/ /g, "%20");
 	$("#table").load(query, function () {
 		selected.forEach(function (course) {
 			if (course.removed) return;
@@ -66,7 +66,7 @@ function save() {
 		toShow += "- [" + course.code + "] " + course.title + " (" + course.credits + ") - MA" + course.year + " Q" + course.semester + "\n";
 	});
 	alert("Votre sélection de cours :\n\n" + toShow + "\nGrâce à l'utilisation de cookies, la sélection sera récupérée à chaque visite du site pour un mois.");
-	document.cookie = "selected" + "=" + selection.substring(0,selection.length-1) + ";" + expires + ";path=/";
+	document.cookie = "selected" + "=" + selection.substring(0,selection.length-1) + ";" + expires + ";path=/"+master;
 };
 
 function from() {
@@ -79,17 +79,6 @@ function from() {
 		addOrRemove(code, parseInt(year));
 	});
 };
-
-function printInfo() {
-	window.print();
-	/*
-	$("#info").printThis({
-		importCSS: true,
-		loadCSS: "../stylesheets/print.css",
-		pageTitle: "MasterChoice"
-	});
-	*/
-}
 
 function addOrRemove(code, year) {
 	var hasBeenFound = false;

@@ -7,27 +7,23 @@ var course = new mongoose.Schema({
 	options: [{_id: false, name: String, required: Boolean}],
 	credits: Number,
 	semester: Number,
-	comments: String
+	comments: String,
+	master: String
 });
 
-course.statics.get = function (callback) {
-	this.find()
+course.statics.get = function (master, callback) {
+	this.find({master: master})
 	.select('-_id code title professors options credits semester comments')
 	.exec(function (err, courses) {
 		if (err) console.error(err);
-		var profNames = [];
-		var optNames = [];
+		var professors = [];
 		courses.forEach(function (course) {
 			course.professors.forEach(function (prof) {
-				if (profNames.indexOf(prof.name) == -1)
-					profNames.push(prof.name);
-			});
-			course.options.forEach(function (opt) {
-				if (optNames.indexOf(opt.name) == -1)
-					optNames.push(opt.name);
+				if (professors.indexOf(prof.name) == -1)
+					professors.push(prof.name);
 			});
 		});
-		callback(courses.sort(), profNames.sort(), optNames.sort());
+		callback(courses.sort(), professors.sort());
 	});
 };
 

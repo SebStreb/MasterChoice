@@ -17,9 +17,14 @@ html
 					a.navbar-brand(href="/").
 						#[img.logo(src="/img/epl.png")]
 						MasterChoice
+
 		.container
-			h1 Error 500
-			p Internal Server Error... #[a(href="/")= "Go to index"]
-			p #{error}
+			.jumbotron
+				h1 Welcome to MasterChoice! We will help you choose your program for your master at UCL.
+			h2 First choose you master :
+			p
+				each master in masters
+					a.btn.btn-primary(href="/"+master.code) #{master.name}
+
 		footer.navbar-fixed-bottom
 			p A small website to help you choose your master program at UCL. &copy; 2017 Sébastien Strebelle

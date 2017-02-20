@@ -8,12 +8,12 @@ html
 		link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
 		script(src="/scripts/jquery.min.js")
 		script(src="/scripts/bootstrap.min.js")
-		script(src="/scripts/printThis.js")
 		script(src="/scripts/selection.js")
 		script.
+			var master = "#{master}";
 			var courses = [#{courses}];
 			var selected = [];
-		title MasterChoice
+		title MasterChoice - #{master}
 
 	body
 
@@ -28,7 +28,7 @@ html
 
 					a.navbar-brand(href="/").
 						#[img.logo(src="/img/epl.png")]
-						MasterChoice
+						MasterChoice - #{master}
 					.navbar-text#name
 
 				.collapse.navbar-collapse#collapse
@@ -103,7 +103,7 @@ html
 								p#o6
 								p#o6p
 					.modal-footer
-						button.btn.btn-primary(onclick="printInfo();") Imprimer
+						button.btn.btn-primary(onclick="window.print();") Imprimer
 						button.btn.btn-default(type="button", data-dismiss="modal") Close
 
 		.container-fluid
@@ -112,7 +112,7 @@ html
 					label(for="prof") Filtrer par professeur :
 					select.form-control#prof
 						option#nameProf
-						each name in profNames
+						each name in professors
 							option #{name}
 					button.btn.btn-primary(onclick="filterProf($('#prof').val());") Filtrer
 				.form-group.form-space
@@ -123,12 +123,12 @@ html
 					label(for="opt") Filtrer par option :
 					select.form-control#opt
 						option#nameOpt
-						each name in optNames
-							option #{name}
+						each option in options
+							option #{option.name}
 					button.btn.btn-primary(onclick="filterOpt($('#opt').val());") Filtrer
 
 			.table-responsive#table
 				p.text-center wait for it…
 
 		footer
-			p A small website to help you choose your Computer Science master program at UCL. &copy; 2017 Sébastien Strebelle
+			p A small website to help you choose your master program at UCL. &copy; 2017 Sébastien Strebelle

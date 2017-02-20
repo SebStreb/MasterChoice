@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 var courses = [];
-var data = fs.readFileSync("./database/MasterChoice.csv", 'utf8');
+var data = fs.readFileSync("./database/sinf2m.csv", 'utf8');
 
 data.trim().split('\n').forEach(function (course, index) {
 	if (index == 0) return;
@@ -24,7 +24,8 @@ data.trim().split('\n').forEach(function (course, index) {
 		options : options,
 		semester : fields[4],
 		credits : fields[5],
-		comments : fields[6]
+		comments : fields[6],
+		master : "SINF2M"
 	};
 });
 
