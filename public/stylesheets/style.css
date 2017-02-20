@@ -53,3 +53,23 @@ footer {
 	background-color: white;
 	color: grey;
 }
+
+@media print {
+	.modal {
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		overflow: visible!important;
+	}
+
+	body.modal-open {
+		visibility: hidden;
+	}
+
+	body.modal-open .modal .modal-header,
+	body.modal-open .modal .modal-body {
+		visibility: visible;
+	}
+}

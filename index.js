@@ -1,5 +1,4 @@
 const express = require('express');
-const http = require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -81,8 +80,6 @@ app.use(function(error, req, res, next) {
 	res.status(500).render('500', {error: error});
 });
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_tfxxztbl:umk61l2ukm8gnhago7lko8vnvd@ds155529.mlab.com:55529/heroku_tfxxztbl');
-
 function normalizePort(val) {
 	var port = parseInt(val, 10);
 	if (isNaN(port)) return val; // named pipe
@@ -90,11 +87,10 @@ function normalizePort(val) {
 	return false;
 }
 
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_tfxxztbl:umk61l2ukm8gnhago7lko8vnvd@ds155529.mlab.com:55529/heroku_tfxxztbl');
+
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-var server = http.createServer(app);
-
 console.log("Server listening on port " + port);
-
-server.listen(port);
+app.listen(port);

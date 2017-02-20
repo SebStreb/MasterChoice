@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const fs = require('fs-extra');
-
 const course = require('./course.js');
 const data = require('./data.js');
 

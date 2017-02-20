@@ -1,9 +1,7 @@
 $(document).ready(function () {
-	$("#table").load('/all');
 	$("#name").text("");
 	$("#nameProf").text("");
 	$("#nameOpt").text("");
-	calculateCredits();
 	if (document.cookie) from();
 	showAll();
 });
@@ -80,16 +78,28 @@ function from() {
 		var year = sel.split(':')[1];
 		addOrRemove(code, parseInt(year));
 	});
-	calculateCredits();
 };
+
+function printInfo() {
+	window.print();
+	/*
+	$("#info").printThis({
+		importCSS: true,
+		loadCSS: "../stylesheets/print.css",
+		pageTitle: "MasterChoice"
+	});
+	*/
+}
 
 function addOrRemove(code, year) {
 	var hasBeenFound = false;
 	selected.forEach(function (course) {
 		if (course.code === code && course.removed === false) {
+			$("#"+course.code).removeClass("success");
 			course.removed = true;
 			hasBeenFound = true;
 		} else if (course.code === code) {
+			$("#"+course.code).addClass("success");
 			course.removed = false;
 			course.year = year;
 			hasBeenFound = true;
@@ -120,40 +130,40 @@ function calculateCredits() {
 	var q1List = "", q2List = "", q3List = "", q4List = "";
 	var opts = {"1" : 0, "2" : 0, "3" : 0, "3p" : 0, "4" : 0, "4p" : 0,
 				"5" : 0, "5p" : 0, "6" : 0, "6p" : 0, "7" : 0};
-	courses.forEach(function (course) {
-		$("#"+course.code).removeClass("success");
-	});
+
 	selected.forEach(function (course) {
 		if (course.removed) return;
-		$("#"+course.code).addClass("success");
-		course.desc = "<strong>[" + course.code + "]</strong> " + course.title + " (" + course.credits + ")";
+		var desc = "<strong>[" + course.code + "]</strong> " +
+					course.title + " (" + course.credits + ")";
+
 		if (course.year === 1) {
 			if (course.semester === 1) {
 				q1 += course.credits;
-				q1Courses.push(course.desc);
+				q1Courses.push(desc);
 			} else if (course.semester === 2) {
 				q2 += course.credits;
-				q2Courses.push(course.desc);
+				q2Courses.push(desc);
 			} else {
 				q1 += course.credits / 2;
 				q2 += course.credits / 2;
-				q1Courses.push(course.desc);
-				q2Courses.push(course.desc);
+				q1Courses.push(desc);
+				q2Courses.push(desc);
 			}
 		} else {
 			if (course.semester === 1) {
 				q3 += course.credits;
-				q3Courses.push(course.desc);
+				q3Courses.push(desc);
 			} else if (course.semester === 2) {
 				q4 += course.credits;
-				q4Courses.push(course.desc);
+				q4Courses.push(desc);
 			} else {
 				q3 += course.credits / 2;
 				q4 += course.credits / 2;
-				q3Courses.push(course.desc);
-				q4Courses.push(course.desc);
+				q3Courses.push(desc);
+				q4Courses.push(desc);
 			}
 		}
+
 		course.options.forEach(function (option) {
 			switch (option.name) {
 				case "Tronc commun":
@@ -189,11 +199,10 @@ function calculateCredits() {
 				case "Autres":
 					opts["7"]++;
 					break;
-				default:
-					console.log("WTF is " + option.name);
 			}
 		});
 	});
+
 	var o1 = "<strong>" + opts["1"] + "</strong> cours requis sur 4";
 	var o2 = "<strong>" + opts["2"] + "</strong> cours requis sur 5";
 	var o3 = "<strong>" + opts["3"] + "</strong> cours requis sur 4";
@@ -205,6 +214,7 @@ function calculateCredits() {
 	var o6 = "<strong>" + opts["6"] + "</strong> cours requis sur 4";
 	var o6p = "<strong>" + opts["6p"] + "</strong> cours supplémentaires";
 	var o7 = "<strong>" + opts["7"] + "</strong> cours supplémentaires";
+
 	q1Courses.forEach(function (course) {
 		q1List += "<li>" + course + "</li>";
 	});
@@ -217,6 +227,7 @@ function calculateCredits() {
 	q4Courses.forEach(function (course) {
 		q4List += "<li>" + course + "</li>";
 	});
+
 	populateHTML({
 		q1: q1, q2: q2, q3: q3, q4: q4,
 		o1: o1, o2: o2, o3: o3, o3p: o3p,

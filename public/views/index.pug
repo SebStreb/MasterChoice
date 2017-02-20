@@ -8,6 +8,7 @@ html
 		link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
 		script(src="/scripts/jquery.min.js")
 		script(src="/scripts/bootstrap.min.js")
+		script(src="/scripts/printThis.js")
 		script(src="/scripts/selection.js")
 		script.
 			var courses = [#{courses}];
@@ -48,8 +49,9 @@ html
 					.modal-header
 						button.close(type="button", data-dismiss="modal") &times;
 						h2 Votre choix de programme
-					.modal-body#info
+					.modal-body
 						h3 Nombre de crédits sur tout le master : #[strong#total2]
+						hr
 						h3 Première année de Master
 						.row
 							.col-md-6
@@ -60,6 +62,7 @@ html
 								h4 Quadrimestre 2
 								p Nombre de crédits : #[strong#q2]
 								ul#q2Courses
+						hr
 						h3 Deuxième année de Master
 						.row
 							.col-md-6
@@ -70,6 +73,7 @@ html
 								h4 Quadrimestre 2
 								p Nombre de crédits : #[strong#q4]
 								ul#q4Courses
+						hr
 						h3 Détail des options
 						.row
 							.col-md-4
@@ -99,6 +103,7 @@ html
 								p#o6
 								p#o6p
 					.modal-footer
+						button.btn.btn-primary(onclick="printInfo();") Imprimer
 						button.btn.btn-default(type="button", data-dismiss="modal") Close
 
 		.container-fluid

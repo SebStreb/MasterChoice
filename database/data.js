@@ -18,7 +18,7 @@ data.trim().split('\n').forEach(function (course, index) {
 			options[index] = {name: option.trim(), required: false};
 	});
 	courses[index-1] = {
-		code : fields[0],
+		code : fields[0].trim(),
 		title : fields[1].trim(),
 		professors : professors,
 		options : options,
