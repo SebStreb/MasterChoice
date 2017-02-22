@@ -1,6 +1,6 @@
 {
   "name": "masterchoice",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A small website to help you choose Computer Science your master program at UCL.",
   "main": "index.js",
   "scripts": {

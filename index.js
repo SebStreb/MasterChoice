@@ -11,12 +11,10 @@ var app = express();
 app.set('views', './public/views');
 app.set('view engine', 'pug');
 
-var accessLogStream = fs.createWriteStream('access.log', {flags: 'a'});
-app.use(morgan('[:date[clf]] \t :url \t :status \t :remote-addr', {
+app.use(morgan('[:date[clf]]\t:status\t:url', {
 	skip: function (req, res) {
 		return req.path.startsWith('/img') || req.path.startsWith('/scripts') || req.path.startsWith('/stylesheets');
-	},
-	stream: accessLogStream
+	}
 }));
 
 app.use(express.static('public'));
