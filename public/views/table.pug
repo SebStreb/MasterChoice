@@ -13,7 +13,8 @@ table.table.table-striped
 		each course in courses
 			tr(id = course.code)
 				td
-					strong #{course.code}
+					strong
+						a(href="http://www.uclouvain.be/cours-2016-"+course.code) #{course.code}
 				td #{course.title}
 				td
 					ul.list-group
