@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$("#name").text("");
-	$("#nameProf").text("");
-	$("#nameOpt").text("");
+	$("#prof").val(null);
+	$("#opt").val(null);
 	if (document.cookie) from();
 	showAll();
 });
@@ -14,11 +14,15 @@ function showAll() {
 		});
 	});
 	$("#name").text("");
-	$("#nameProf").text("");
-	$("#nameOpt").text("");
+	$("#prof").val(null);
+	$("#opt").val(null);
 }
 
 function filterProf(prof) {
+	if (prof == "") {
+		showAll();
+		return;
+	}
 	var query = '/professor/'+prof.replace(/ /g, "%20");
 	$("#table").load(query, function () {
 		selected.forEach(function (course) {
@@ -26,12 +30,16 @@ function filterProf(prof) {
 			$("#"+course.code).addClass("success");
 		});
 	});
-	$("#name").text(" > " + prof);
-	$("#nameProf").text(prof);
-	$("#nameOpt").text("");
+	$("#name").text(" -> " + prof);
+	$("#prof").val(prof);
+	$("#opt").val(null);
 };
 
 function filterOpt(opt) {
+	if (prof == "") {
+		showAll();
+		return;
+	}
 	var query = '/option/'+opt.replace(/ /g, "%20");
 	$("#table").load(query, function () {
 		selected.forEach(function (course) {
@@ -39,9 +47,9 @@ function filterOpt(opt) {
 			$("#"+course.code).addClass("success");
 		});
 	});
-	$("#name").text(" > " + opt);
-	$("#nameProf").text("");
-	$("#nameOpt").text(opt);
+	$("#name").text(" -> " + opt);
+	$("#prof").val(null);
+	$("#opt").val(opt);
 };
 
 function reset() {
@@ -82,13 +90,6 @@ function from() {
 
 function printInfo() {
 	window.print();
-	/*
-	$("#info").printThis({
-		importCSS: true,
-		loadCSS: "../stylesheets/print.css",
-		pageTitle: "MasterChoice"
-	});
-	*/
 }
 
 function addOrRemove(code, year) {

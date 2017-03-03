@@ -111,9 +111,9 @@ html
 				.form-group
 					label(for="prof") Filtrer par professeur :
 					select.form-control#prof
-						option#nameProf
+						option(value=null)
 						each name in profNames
-							option #{name}
+							option(value=name) #{name}
 					button.btn.btn-primary(onclick="filterProf($('#prof').val());") Filtrer
 				.form-group.form-space
 				.form-group
@@ -122,9 +122,9 @@ html
 				.form-group
 					label(for="opt") Filtrer par option :
 					select.form-control#opt
-						option#nameOpt
+						option(value=null)
 						each name in optNames
-							option #{name}
+							option(value=name) #{name}
 					button.btn.btn-primary(onclick="filterOpt($('#opt').val());") Filtrer
 
 			.table-responsive#table
