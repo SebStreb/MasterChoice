@@ -36,7 +36,7 @@ function filterProf(prof) {
 };
 
 function filterOpt(opt) {
-	if (prof == "") {
+	if (opt == "") {
 		showAll();
 		return;
 	}
