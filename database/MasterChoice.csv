@@ -16,7 +16,7 @@ LINGI2132	Language and translators	Pierre Schaus	Finalité spécialisée (O)	2	6
 LINGI2142	Computer networks: configuration and management	Olivier Bonaventure	Sécurité et réseaux (O)	2	5
 LINGI2143	Concurrent systems : models and analysis	Charles Pecheur	Ingénierie logicielle (O), Sécurité et réseaux	1	5
 LINGI2144	Secured systems engineering	Gildas Avoine	Sécurité et réseaux	1	5	préalable : LINGI2347
-LINGI2145	Cloud Computing	Damien Leroy	Sécurité et réseaux (O), Ingénierie logicielle, Intelligence artificielle	1	5
+LINGI2145	Cloud Computing	Damien Leroy	Sécurité et réseaux (O), Ingénierie logicielle, Intelligence artificielle	2	5
 LINGI2146	Mobile and Embedded Computing	Ramin Sadre	Sécurité et réseaux (O)	2	5
 LINGI2172	Databases	Siegfried Nijssen	Finalité spécialisée (O)	2	6
 LINGI2241	Architecture and performance of computer systems	Ramin Sadre	Finalité spécialisée (O)	1	6
@@ -55,6 +55,6 @@ LSINF2335	Programming paradigms	Kim Mens	Ingénierie logicielle	2	5
 LSINF2345	Distributed application design	Peter Van Roy	Ingénierie logicielle (O), Sécurité et réseaux	2	5
 LSINF2382	Computer supported collaborative work	Jean Vanderdonckt	Ingénierie logicielle	2	5	préalable : LINGI2255
 LSINF2990	Travail de fin d'études	Étudiant	Tronc commun (O)	0	28	seulement en MA2
-LTECO2100	Questions de sciences religieuses : lectures bibliques	Hans Ausloos	Tronc commun	2	2	choisir un cours de théologie
-LTECO2200	Questions de sciences religieuses : christianisme et questions de sens	Dominique Martens	Tronc commun	1	2	choisir un cours de théologie
-LTECO2300	Questions de sciences religieuses : questions d'éthique 	Marcela Lobo Bustamante	Tronc commun	2	2	choisir un cours de théologie
+LTECO2100	Questions de sciences religieuses : lectures bibliques	Hans Ausloos	Tronc commun	1	2	choisir un cours de théologie
+LTECO2200	Questions de sciences religieuses : christianisme et questions de sens	Dominique Martens	Tronc commun	2	2	choisir un cours de théologie
+LTECO2300	Questions de sciences religieuses : questions d'éthique 	Marcela Lobo Bustamante	Tronc commun	1	2	choisir un cours de théologie
